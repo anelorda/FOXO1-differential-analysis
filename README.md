@@ -342,7 +342,7 @@ KEGG pathway analysis provides insights into the molecular interaction
 and reaction networks associated with the differentially expressed
 genes.
 
-\`\`\`{r kegg_analysis, fig.width=10, fig.height=8} run_kegg_analysis
+```{r kegg_analysis, fig.width=10, fig.height=8} run_kegg_analysis
 \<- function(results_df, title) { diff_genes \<-
 results_df$gene[results_df$padj \< 0.05 &
 abs(results_df\$log2FoldChange) \> 1\]
@@ -366,6 +366,7 @@ analysis -", title)) } }
 run_kegg_analysis(results_non_stimulated, "Non-stimulated")
 run_kegg_analysis(results_stimulated, "Stimulated")
 run_kegg_analysis(results_rest, "Stimulated Rest")
+```
 
 
     KEGG Pathways show the molecular interactions of the most expressed genes in three conditions between control and FOXO1. As it can be seen from the graphs, the most differentiated genes are mostly associated with cytokine-cytokine receptor interaction and chemokine signaling pathway in both non-stimulated and stimulated rest conditions, while in stimulated the mostly differentiated genes are associated with Th17 cell differentiation and interactions related to the specific pathogens or diseases.
