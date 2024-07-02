@@ -165,6 +165,10 @@ print(plot_non_stimulated)
 print(plot_stimulated)
 print(plot_rest)
 ```
+![volcano_plot_non_stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/de93a100-12f4-4a07-a014-b173bccbe9a4)
+![volcano_plot_stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/9615e21a-4c7a-4238-8201-e8ba6ef49622)
+![volcano_plot_rest](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/29290cdf-7377-4a6d-b88e-9c1cffc2503e)
+
 
 According to the volcano plot and the performed DESeq differential analysis, the most differential genes are found in the non-stimulated and stimulated-rest conditions, while in the stimulated condition, the genes appear to be very close to the cutoff values.
 
@@ -189,6 +193,7 @@ ggplot(pcaData, aes(PC1, PC2, color = condition)) +
 # Save PCA plot
 ggsave("PCA_plot.png")
 ```
+![PCA_plot](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/5f6a56c8-b33a-47df-bdb1-a663aba340c0)
 
 According to the PCA plot, the first principal component (PC1), which explains 71% of the variance, distinctly separates the stimulated samples (both FOXO1 and control) from the other conditions. This indicates that stimulation has a major effect on gene expression profiles. The second principal component (PC2), explaining 16% of the variance, separates the non-stimulated and stimulated-rest conditions, suggesting that these states have additional, but lesser, effects on gene expression. In addition to this, they are separated by samples in each condition, meaning that there can be other factors such as experimental conditions. This interpretation highlights the dominant role of stimulation in driving gene expression changes while also acknowledging the contributions of the other conditions.
 
@@ -260,6 +265,10 @@ create_heatmap(results_stimulated, "Stimulated", dds)
 create_heatmap(results_rest, "Stimulated Rest", dds)
 
 ```
+![heatmap_non-stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/fdc4e986-dc31-4731-8f1f-50009acb8c1d)
+![heatmap_stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/db352cac-3c3f-454a-9066-d557b1c5cbeb)
+![heatma_rest](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/329ae4aa-2ecb-48aa-9ad2-7ddb1e320ae3)
+
 
 According to the heatmap of the deferentially expressed genes in non-stimulated condition are mostly under-expressed in control, while in FOXO1 are moderately expressed. These genes are also seemed to be also expressed in control-stimulated condition, which has some similarities with FOXO1 non-stimulated. The deferentially expressed genes in stimulated are differently between other conditions between control and FOXO1. While, stimulated rest, shows similar expression in stimulated.
 
@@ -291,6 +300,10 @@ run_go_analysis(results_non_stimulated, "Non-stimulated", "BP")
 run_go_analysis(results_stimulated, "Stimulated", "BP")
 run_go_analysis(results_rest, "Stimulated Rest", "BP")
 ```
+![GO_BP_nonstimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/a2d50ffa-1dea-4152-8ed7-d1b2fbeb6661)
+![GO_BP_stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/fbba8e06-bc53-499c-b83a-188a16308950)
+![GO_BP_rest](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/22800a5f-4518-483e-aabb-d568e8fe57c8)
+
 
 The Biological Processes in the top differential genes are associated mostly with regulation of cell-cell adhesion; positive regulation of hydrolase activity in non-stimulated condition. In stimulated, it affects mostly on genes related to positive regulation of cytokine activity, while in rest to mononuclear differentiation.
 
@@ -300,6 +313,9 @@ run_go_analysis(results_non_stimulated, "Non-stimulated", "MF")
 run_go_analysis(results_stimulated, "Stimulated", "MF")
 run_go_analysis(results_rest, "Stimulated Rest", "MF")
 ```
+![GO_MF_nonstimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/b5ad2c0e-f084-40ae-b347-95752a88024b)
+![GO_MF_stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/c647a399-2deb-4f8e-8114-6322d5670b30)
+![GO_MF_rest](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/7b38bf2e-c354-4082-86a4-f0d1b4c3d8db)
 
 The Molecular Function of the top deferentially expressed genes are associated with cytokine receptor binding and cytokine activity in both non-stimulated and stimulated rest, while in stimulated, genes have function of immune receptor activity and MHC complex binding.
 
@@ -309,6 +325,10 @@ run_go_analysis(results_non_stimulated, "Non-stimulated", "CC")
 run_go_analysis(results_stimulated, "Stimulated", "CC")
 run_go_analysis(results_rest, "Stimulated Rest", "CC")
 ```
+![GO_CC_nonstimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/def5c3b8-4781-4b69-88fd-0e9e1bf8321a)
+![GO_CC_stimulated](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/d04c918a-e415-477e-98b8-bfa7e3eaf9aa)
+![GO_CC_rest](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/9949d944-62ab-467a-8ffb-7044fca52898)
+
 
 The majority of deferentially expressed genes are associated to the cell leading edge, lamellipodium in non-stimulated and rest, while in stimulated they are located in different organelle membranes such as lysosomal, lytic vacuolar, late endosome and others.
 
@@ -341,6 +361,10 @@ run_kegg_analysis(results_non_stimulated, "Non-stimulated")
 run_kegg_analysis(results_stimulated, "Stimulated")
 run_kegg_analysis(results_rest, "Stimulated Rest")
 ```
+![KEGG_nonstim](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/7daa429f-11e1-4bb2-babb-d266664f826b)
+![KEGG_STIM](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/b5086b35-5c5e-4f0c-8344-8b6b73b25baf)
+![KEGG_rest](https://github.com/anelorda/FOXO1-differential-analysis/assets/98325381/576fb79c-b195-4ddf-a547-b12008774fc6)
+
 
 KEGG Pathways show the molecular interactions of the most expressed genes in three conditions between control and FOXO1. As it can be seen from the graphs, the most differentiated genes are mostly associated with cytokine-cytokine receptor interaction and chemokine signaling pathway in both non-stimulated and stimulated rest conditions, while in stimulated the mostly differentiated genes are associated with Th17 cell differentiation and interactions related to the specific pathogens or diseases.
 
